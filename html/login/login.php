@@ -5,6 +5,8 @@ require '../../lib/login/error.php';
 
 $error = new Error();
 
+var_dump($_POST);
+
 if (!empty($_POST["email_address"]) && !empty($_POST["password"])){
 //var_dump($_POST["pass"],$_POST["username"]);
     $login = Login_Base::login($_POST["email_address"],$_POST["password"]);
