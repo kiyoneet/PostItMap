@@ -15,8 +15,10 @@ if (isset($_POST)){
         $error->set('パスワードが未入力です。');
     }
 
+    var_dump($error);
+
     if (count($error->get()) > 0){
-        header('Location : ../login', true);   
+        header('Location : index.html', true);   
         //exit(); 
     }else{
         //ログインオブジェクト発行
