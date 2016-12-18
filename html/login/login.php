@@ -5,7 +5,7 @@ require '../../lib/login/error.php';
 
 $error = new Error();
 
-var_dump($_POST);
+//var_dump($_POST);
 
 if (isset($_POST)){
     if (empty($_POST['emailaddress'])){
@@ -15,7 +15,7 @@ if (isset($_POST)){
         $error->set('パスワードが未入力です。');
     }
 
-    var_dump($error);
+    var_dump($error->get());
 
     if (count($error->get()) > 0){
         header('Location : index.html', true);   
