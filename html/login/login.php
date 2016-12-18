@@ -1,7 +1,7 @@
 <?php
 
 include "../../lib/login/base.php";
-require '../../lib/login/error.php';
+include '../../lib/login/error.php';
 
 $error = new Error();
 

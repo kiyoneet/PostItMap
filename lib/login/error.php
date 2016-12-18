@@ -12,7 +12,7 @@ class Error
 	{
 
 		return $errors;
-}
+	}
 	public function set($error)
 	{
 		$errors[] = $error;
