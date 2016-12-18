@@ -17,15 +17,15 @@ if (isset($_POST)){
 
     if (count($error->get()) > 0){
         header('Location : ../login', true);   
-        exit(); 
+        //exit(); 
     }else{
         //ログインオブジェクト発行
         if(!$login = Login_Base::login($_POST["email_address"],$_POST["password"])){
             $error -> set('メールアドレス、もしくはパスワードが違います。');
-            exit();
+            // exit();
         } else{
             header('Location : ../menu', true);   
-            exit();
+            // exit();
         }
     }
 
