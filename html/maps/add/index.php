@@ -64,7 +64,8 @@
 
               /* 地図がクリックされた時 */
             google.maps.event.addListener(map, 'click', function(event) {
-                marker = null;
+                // マーカーの初期化
+                marker.setMap(null);
                 /* クリックした場所にマーカーを追加 */
                 var clickedLocation = new google.maps.LatLng(event.latLng);
                 var marker = new google.maps.Marker({
