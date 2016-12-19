@@ -22,11 +22,14 @@
         $sql ="SELECT * FROM T_MAP WHERE 1";
 
         $sth = $db -> query($sql);
-        if($row = $sth->fetch() ){
+        if($row = $sth->fetch()){
            $lat = $row['lat'];
            $lng = $row['lng'];
+        } else{
+            //初期値　皇居
+            $lat = 35.685149;
+            $lng = 139.752810;
         }
-      
       ?>
 
     
