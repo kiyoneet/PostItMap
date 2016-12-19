@@ -7,7 +7,7 @@ $error = new Error();
 
 //var_dump($_POST);
 
-if (isset($_POST)){
+if (!empty($_POST)){
     if (empty($_POST['emailaddress'])){
         $error->set('メールアドレスが未入力です。');
     }
@@ -32,6 +32,13 @@ if (isset($_POST)){
     }
 
     
+} else{
+    if ($login = Login_Base::getLoginStatus()){
+        header('Location : ../menu' , true);
+        exit();
+    } else{
+        header('Location : ../login' , true);
+    }
 }
 
 
