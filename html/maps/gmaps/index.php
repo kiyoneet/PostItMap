@@ -7,7 +7,7 @@
   <!-- jQuery -->
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
   <!-- GoogleMapAPIKey -->
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVbti9y3mOBfGjeOwSRA52zx4I7vnLgD4&sensor=FALSE"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVbti9y3mOBfGjeOwSRA52zx4I7vnLgD4&sensor=TRUE"></script>
   <!--gMapsLib -->
   <script type="text/javascript" src="../../../lib/js/gmaps/gmaps.js"></script>
   <!-- gMapsCode -->
@@ -19,6 +19,22 @@
         lat: 35.689161,
         lng: 139.691781,
         zoom: 16
+      });
+      map.addMarker({
+        lat: 35.689161,
+        lng: 139.691781,
+        title: 'Lima',
+        click: function(e) {
+          alert('You clicked in this marker');
+        }
+      });
+      map.addMarker({
+        lat: 35.690659,
+        lng: 139.699978,
+        title: 'Marker',
+        infoWindow: {
+          content: '<p>HTML Content</p>'
+        }
       });
     });
   </script>
