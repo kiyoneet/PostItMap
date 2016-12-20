@@ -7,8 +7,7 @@
   <!-- jQuery -->
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
   <!-- GoogleMapAPIKey -->
-  <!--<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDVbti9y3mOBfGjeOwSRA52zx4I7vnLgD4&sensor=FALSE"></script>-->
-  <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVbti9y3mOBfGjeOwSRA52zx4I7vnLgD4&sensor=FALSE"></script>
   <!--gMapsLib -->
   <script type="text/javascript" src="../../../lib/js/gmaps/gmaps.js"></script>
   <!-- gMapsCode -->
