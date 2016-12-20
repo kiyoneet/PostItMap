@@ -16,7 +16,7 @@
     var map;
     $(document).ready(function() {
       map = new GMaps({
-        div: '#map-canvas',
+        div: '#map',
         lat: 35.689161,
         lng: 139.691781,
         zoom: 16
@@ -27,7 +27,7 @@
 
 <body>
 <!-- マップ表示領域 -->
-  <div id="map-canvas"></div>
+  <div id="map"></div>
 </body>
 
 </html>
