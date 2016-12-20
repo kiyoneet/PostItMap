@@ -1,4 +1,4 @@
-
+<?php echo $base_url;?>
 <link rel="stylesheet" type="text/css" href="<?php echo $base_url; ?>/lib/account.css" media="all">
 
 
