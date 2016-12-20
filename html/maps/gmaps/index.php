@@ -22,10 +22,16 @@
       });
     });
   </script>
+  <style>
+    #map {
+      width: 95%;
+      height: 500px;
+    }
+  </style>
 </head>
 
 <body>
-<!-- マップ表示領域 -->
+  <!-- マップ表示領域 -->
   <div id="map"></div>
 </body>
 
