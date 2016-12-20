@@ -31,14 +31,14 @@ class UserRepository extends DbRepository
 
     public function fetchByUserName($email_address)
     {
-        $sql = "SELECT * FROM T_USER WHERE email_address = :email_address";
+        $sql = "SELECT * FROM user WHERE email_address = :email_address";
 
         return $this->fetch($sql, array(':email_address' => $email_address));
     }
 
     public function isUniqueUserName($email_address)
     {
-        $sql = "SELECT COUNT(id) as count FROM T_USER WHERE email_address = :email_address";
+        $sql = "SELECT COUNT(id) as count FROM user WHERE email_address = :email_address";
 
         $row = $this->fetch($sql, array(':email_address' => $email_address));
         if ($row['count'] === '0') {
@@ -52,7 +52,7 @@ class UserRepository extends DbRepository
     {
         $sql = "
             SELECT u.*
-                FROM T_USER u
+                FROM user u
                     LEFT JOIN following f ON f.following_id = u.id
                 WHERE f.user_id = :user_id
         ";
