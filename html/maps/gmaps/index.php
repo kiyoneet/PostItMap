@@ -9,7 +9,7 @@
   <!-- GoogleMapAPIKey -->
   <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=AIzaSyDVbti9y3mOBfGjeOwSRA52zx4I7vnLgD4&sensor=FALSE"></script>
   <!--gMapsLib -->
-  <script type="text/javascript" src="../../lib/js/gmaps/gmaps.min.js"></script>
+  <script type="text/javascript" src="../../../lib/js/gmaps/gmaps.min.js"></script>
   <!-- gMapsCode -->
   <script type="text/javascript">
     var map;

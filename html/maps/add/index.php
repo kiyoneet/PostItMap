@@ -44,9 +44,6 @@ $row = $sth->fetch();
   <!--googleMapApiKey -->
   <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=AIzaSyDVbti9y3mOBfGjeOwSRA52zx4I7vnLgD4&sensor=FALSE">
   </script>
-  <!--gMapsLib -->
-  <script type="text/javascript" src="../../lib/gmaps/gmaps.min.js">
-  </script>
   <script type="text/javascript">
     /* ページ読み込み時に地図を初期化 */
 
