@@ -39,7 +39,7 @@ class PostItMapApplication extends Application
         $this->db_manager->connect('master', array(
             'dsn'      => 'mysql:dbname=postItMap;host=localhost',
             'user'     => 'root',
-            'password' => '',
+            'password' => 'Nacc2016',
         ));
     }
 }
