@@ -41,8 +41,11 @@ $row = $sth->fetch();
 </head>
 
 <body onload="initialize()">
-  <!--公開用 -->
+  <!--googleMapApiKey -->
   <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=AIzaSyDVbti9y3mOBfGjeOwSRA52zx4I7vnLgD4&sensor=FALSE">
+  </script>
+  <!--gMapsLib -->
+  <script type="text/javascript" src="../../lib/gmaps/gmaps.min.js">
   </script>
   <script type="text/javascript">
     /* ページ読み込み時に地図を初期化 */
@@ -74,11 +77,24 @@ $row = $sth->fetch();
 
       map_canvas = document.getElementById('map_canvas');
       /* 地図がクリックされた時 */
-      google.maps.event.addListener(map_canvas, 'click', click) {
-        // マーカーの初期化
-        //marker.setMap(null);
-        /* クリックした場所にマーカーを追加 */
-        var clickedLocation = new google.maps.LatLng(event.latLng);
+      GEvent.addListener(map_canvas, "click", clickAction);
+
+    }
+    // ロード時
+    function load() {
+      var rows = <?php json_safe_encode($row); ?>;
+
+      for (var i = 0; i < rows.lengh; i++) {
+        var latlng = new google.maps.LatLng(rows.lat, rows.lng);
+
+
+        //マーカーを作成したら marker_list に追加
+        var marker = createMarker(map_canvas, latlng);
+        marker_list.push(marker);
+      }
+    }
+    function clickAction(){
+      var clickedLocation = new google.maps.LatLng(event.latLng);
         var marker = new google.maps.Marker({
           position: event.latLng,
           map: map
@@ -87,38 +103,22 @@ $row = $sth->fetch();
         /* マーカーを立てた位置を追加 */
         document.latlng.lat.value = event.latLng.lat().toString();
         document.latlng.lng.value = event.latLng.lng().toString();
-      });
     }
-// ロード時
-function load(){
-    var rows = <?php json_safe_encode($row); ?>;
-
-    for(var i = 0; i < rows.lengh; i++) {
-      var latlng = new google.maps.LatLng(rows.lat, rows.lng);
-      
-      
-      //マーカーを作成したら marker_list に追加
-      var marker = createMarker(map_canvas, latlng);
-      marker_list.push(marker);
-    }
-  }
-//マーカー作成
+    //マーカー作成
     function createMarker(map, latlng) {
       var marker = new google.maps.Marker();
       marker.setPosition(latlng);
       marker.setMap(map);
       return marker;
     }
-//　マーカー削除
-function removeMarkers() {
-    //ボタンが押されたら、マーカーの配列に対して
-    //setMap(null)を実行し、地図から削除
-    marker_list.forEach(function(marker, idx) {
-      marker.setMap(null);
-    });
-}
+    //　マーカー削除
+    function removeMarkers() {
+      marker_list.forEach(function(marker, idx) {
+        marker.setMap(null);
+      });
+    }
 
-     google.maps.event.addDomListenerOnce(window, "load", initialize);
+    google.maps.event.addDomListenerOnce(window, "load", initialize);
   </script>
 
 
@@ -148,7 +148,7 @@ function removeMarkers() {
 </body>
 
 </html>
-<?php 
+<?php
 function json_safe_encode($data){
     return json_encode($data, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
 }
