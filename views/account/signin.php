@@ -1,4 +1,5 @@
 <?php echo $base_url;?>
+<?php var_dump($_SERVER);?>
 <link rel="stylesheet" type="text/css" href="<?php echo $base_url; ?>/lib/account.css" media="all">
 
 
