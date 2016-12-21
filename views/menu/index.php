@@ -33,6 +33,7 @@
                 <li><a href="#">EditBookMark</a></li>
               </ul>
             </li>
+            <li><a href="<?php echo $base_url; ?>/account/signout">ログアウト</a></li>
           </ul>
         </nav>
       </div>
